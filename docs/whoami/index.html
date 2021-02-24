@@ -11,6 +11,12 @@
         //let li = document.createElement("li");
         let h1_content = document.createTextNode(title);
         h1.appendChild(h1_content);
+        document.body.appendChild(h1);
+        
+        // create div w/ class something
+        let div_1 = document.createElement("div");
+        div_1.setAttribute("class", "results");
+        document.body.appendChild(div_1);
       }
     </script>
   </body>
