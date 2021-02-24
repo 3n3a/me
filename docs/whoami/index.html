@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Who Am I? - Get your User-Agent</title>
+  </head>
+  <body>
+    <script>
+      document.body.onload = createPage("Identify Your Browser");
+      function createPage (title) {
+        let h1 = document.createElement("h1");
+        //let li = document.createElement("li");
+        let h1_content = document.createTextNode(title);
+        h1.appendChild(h1_content);
+      }
+    </script>
+  </body>
+</html>
