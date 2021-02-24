@@ -6,6 +6,21 @@
   <body>
     <script>
       document.body.onload = createPage("Identify Your Browser");
+      async function identifyBrowser () {
+        let ul = document.createElement("ul");
+        
+        const response = await fetch('https://us-central1-plasma-ivy-294818.cloudfunctions.net/function-2');
+        let res = response.json();
+        
+        for (const [key, value] of Object.entries(res)) {
+          let li = document.createElement("li");
+          li.innerHTML = `<strong>${key}:</strong> <span>${value}</span>`
+          ul.appendChild(li);
+        }
+        
+        document.getElementsByClassName("results")[0].appendChild(ul);
+      }
+      
       function createPage (title) {
         let h1 = document.createElement("h1");
         //let li = document.createElement("li");
@@ -17,6 +32,8 @@
         let div_1 = document.createElement("div");
         div_1.setAttribute("class", "results");
         document.body.appendChild(div_1);
+        
+        identifyBrowser();
       }
     </script>
   </body>
